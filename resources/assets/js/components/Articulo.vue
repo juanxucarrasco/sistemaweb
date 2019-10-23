@@ -46,12 +46,12 @@
                                           <i class="icon-pencil"></i>
                                         </button> &nbsp;
                                         <template v-if="articulo.condicion">
-                                            <button type="button" class="btn btn-danger btn-sm" @click="desactivarCategoria(articulo.id)">
+                                            <button type="button" class="btn btn-danger btn-sm" @click="desactivarArticulo(articulo.id)">
                                                 <i class="icon-trash"></i>
                                             </button>
                                         </template>
                                         <template v-else>
-                                            <button type="button" class="btn btn-info btn-sm" @click="activarCategoria(articulo.id)">
+                                            <button type="button" class="btn btn-info btn-sm" @click="activarArticulo(articulo.id)">
                                                 <i class="icon-check"></i>
                                             </button>
                                         </template>
@@ -115,7 +115,10 @@
                                 <div class="form-group row">
                                     <label class="col-md-3 form-control-label" for="text-input">Código</label>
                                     <div class="col-md-9">
-                                        <input type="text" v-model="codigo" class="form-control" placeholder="Código de barras">                                        
+                                        <input type="text" v-model="codigo" class="form-control" placeholder="Código de barras"> 
+                                        <barcode :value="codigo" :options="{ format: 'EAN-13' }">
+                                            Generando código de barras.    
+                                        </barcode>                                       
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -167,6 +170,7 @@
 </template>
 
 <script>
+    import VueBarcode from 'vue-barcode';
     export default {
         data (){
             return {
@@ -198,6 +202,9 @@
                 arrayCategoria :[]
             }
         },
+        components: {
+        'barcode': VueBarcode
+    },
         computed:{
             isActived: function(){
                 return this.pagination.current_page;
@@ -302,9 +309,9 @@
                     console.log(error);
                 }); 
             },
-            desactivarCategoria(id){
+            desactivarArticulo(id){
                swal({
-                title: 'Esta seguro de desactivar esta categoría?',
+                title: 'Esta seguro de desactivar este artículo?',
                 type: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -319,10 +326,10 @@
                 if (result.value) {
                     let me = this;
 
-                    axios.put('/categoria/desactivar',{
+                    axios.put('/articulo/desactivar',{
                         'id': id
                     }).then(function (response) {
-                        me.listarCategoria(1,'','nombre');
+                        me.listarArticulo(1,'','nombre');
                         swal(
                         'Desactivado!',
                         'El registro ha sido desactivado con éxito.',
@@ -341,9 +348,9 @@
                 }
                 }) 
             },
-            activarCategoria(id){
+            activarArticulo(id){
                swal({
-                title: 'Esta seguro de activar esta categoría?',
+                title: 'Esta seguro de activar este artículo?',
                 type: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -358,10 +365,10 @@
                 if (result.value) {
                     let me = this;
 
-                    axios.put('/categoria/activar',{
+                    axios.put('/articulo/activar',{
                         'id': id
                     }).then(function (response) {
-                        me.listarCategoria(1,'','nombre');
+                        me.listarArticulo(1,'','nombre');
                         swal(
                         'Activado!',
                         'El registro ha sido activado con éxito.',
