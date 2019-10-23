@@ -9,12 +9,10 @@
     <meta name="author" content="Incanatoit.com">
     <meta name="keyword" content="Sistema ventas Laravel Vue Js, Sistema compras Laravel Vue Js">
     <link rel="shortcut icon" href="img/favicon.png">
-    <title>Sistema Ventas - ProGamers</title>
+    <title>Sistema Ventas - IncanatoIT</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <!-- Icons -->
     <link href="css/plantilla.css" rel="stylesheet">
-
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
@@ -77,14 +75,13 @@
         <!-- Contenido Principal -->
         @yield('contenido')
         <!-- /Fin del contenido principal -->
+    </div>   
     </div>
-    </div>
-    
-
     <footer class="app-footer">
-        <span><a href="http://www.facebook.com/">ProGamers</a> &copy; 2018</span>
-        <span class="ml-auto">Desarrollado por <a href="http://www.facebook.com/">ProGamers</a></span>
+        <span><a href="http://www.incanatoit.com/">IncanatoIT</a> &copy; 2017</span>
+        <span class="ml-auto">Desarrollado por <a href="http://www.incanatoit.com/">IncanatoIT</a></span>
     </footer>
+    
 
     <script src="js/app.js"></script>
     <script src="js/plantilla.js"></script>
