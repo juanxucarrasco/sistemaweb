@@ -12,4 +12,8 @@ class Persona extends Model
     {
         return $this->belongsTo('App\Proveedor');
     }
+
+    public function user(){
+        return $this->hasOne('App\User');
+    }
 }
