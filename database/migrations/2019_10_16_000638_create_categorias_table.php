@@ -1,9 +1,9 @@
 <?php
-
+ 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+ 
 class CreateCategoriasTable extends Migration
 {
     /**
@@ -16,12 +16,12 @@ class CreateCategoriasTable extends Migration
         Schema::create('categorias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre', 50);
-            $table->string('descripcion', 256)->nullable();
+            $table->string('descripcion', 256);
             $table->boolean('condicion')->default(1);
             $table->timestamps();
         });
     }
-
+ 
     /**
      * Reverse the migrations.
      *
