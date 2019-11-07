@@ -13,7 +13,7 @@
                             <i class="icon-plus"></i>&nbsp;Nuevo
                         </button>
                     </div>
-                    <div class="card-body" style="overflow-x: scroll">
+                    <div class="card-body">
                         <div class="form-group row">
                             <div class="col-md-6">
                                 <div class="input-group">
