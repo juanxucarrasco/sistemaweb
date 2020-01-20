@@ -24,6 +24,8 @@ Vue.component('user', require('./components/User.vue'));
 Vue.component('ingreso', require('./components/Ingreso.vue'));
 Vue.component('venta', require('./components/Venta.vue'));
 Vue.component('dashboard', require('./components/Dashboard.vue'));
+Vue.component('reportesIngresos', require('./components/IngresosRep.vue'));
+Vue.component('reportesVentas', require('./components/VentasRep.vue'));
 
 const app = new Vue({
     el: '#app',

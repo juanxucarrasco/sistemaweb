@@ -2283,6 +2283,8 @@ Vue.component('user', __webpack_require__(114));
 Vue.component('ingreso', __webpack_require__(119));
 Vue.component('venta', __webpack_require__(124));
 Vue.component('dashboard', __webpack_require__(129));
+Vue.component('reportesIngresos', __webpack_require__(132));
+Vue.component('reportesVentas', __webpack_require__(133));
 
 var app = new Vue({
   el: '#app',
@@ -38414,7 +38416,10 @@ var render = function() {
           _vm._v(" "),
           _c(
             "table",
-            { staticClass: "table table-bordered table-striped table-sm" },
+            {
+              staticClass:
+                "table table-bordered table-striped table-sm table-responsive"
+            },
             [
               _vm._m(1),
               _vm._v(" "),
@@ -39628,7 +39633,10 @@ var render = function() {
           _vm._v(" "),
           _c(
             "table",
-            { staticClass: "table table-bordered table-striped table-sm" },
+            {
+              staticClass:
+                "table table-bordered table-striped table-sm table-responsive"
+            },
             [
               _vm._m(1),
               _vm._v(" "),
@@ -40784,7 +40792,10 @@ var render = function() {
           _vm._v(" "),
           _c(
             "table",
-            { staticClass: "table table-bordered table-striped table-sm" },
+            {
+              staticClass:
+                "table table-bordered table-striped table-sm table-responsive"
+            },
             [
               _vm._m(1),
               _vm._v(" "),
@@ -42641,7 +42652,10 @@ var render = function() {
           _vm._v(" "),
           _c(
             "table",
-            { staticClass: "table table-bordered table-striped table-sm" },
+            {
+              staticClass:
+                "table table-bordered table-striped table-sm table-responsive"
+            },
             [
               _vm._m(1),
               _vm._v(" "),
@@ -42729,9 +42743,7 @@ var render = function() {
                       domProps: { textContent: _vm._s(persona.usuario) }
                     }),
                     _vm._v(" "),
-                    _c("td", {
-                      domProps: { textContent: _vm._s(persona.role) }
-                    })
+                    _c("td", { domProps: { textContent: _vm._s(persona.rol) } })
                   ])
                 })
               )
@@ -43374,7 +43386,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Usuario")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Role")])
+        _c("th", [_vm._v("Rol")])
       ])
     ])
   }
@@ -44394,7 +44406,7 @@ var render = function() {
                       "table",
                       {
                         staticClass:
-                          "table table-bordered table-striped table-sm"
+                          "table table-bordered table-striped table-sm table-responsive"
                       },
                       [
                         _vm._m(1),
@@ -48901,6 +48913,66 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-78b73b2d", module.exports)
   }
 }
+
+/***/ }),
+/* 132 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = null
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\IngresosRep.vue"
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 133 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = null
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\VentasRep.vue"
+
+module.exports = Component.exports
+
 
 /***/ })
 /******/ ]);

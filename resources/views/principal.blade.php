@@ -11,7 +11,11 @@
     <link rel="shortcut icon" href="img/favicon.png">
     <title>Sistema Ventas - DoctorPc</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js">
+    <link rel="stylesheet" href="js/Chart.min.js">
+    <link rel="stylesheet" href="js/graficas.js">
+    <link rel="stylesheet" href="js/sistemalaravel.js">
+    
+
     <!-- Icons -->
     <link href="css/plantilla.css" rel="stylesheet">
 </head>

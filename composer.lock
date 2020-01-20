@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "220e8d99974e59fa5407694bd9ad4118",
+    "content-hash": "ad2a61f2c8ba8e018bd21e92764a1d64",
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -930,6 +930,54 @@
                 "schedule"
             ],
             "time": "2017-01-23T04:29:33+00:00"
+        },
+        {
+            "name": "muhamadrezaar/highcharts",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/julles/laravel-highcharts.git",
+                "reference": "03622a5ffcfb1bc754316012247142c6bf650e87"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/julles/laravel-highcharts/zipball/03622a5ffcfb1bc754316012247142c6bf650e87",
+                "reference": "03622a5ffcfb1bc754316012247142c6bf650e87",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "RezaAr\\Highcharts\\Provider"
+                    ],
+                    "aliases": {
+                        "Chart": "RezaAr\\Highcharts\\Facade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "RezaAr\\Highcharts\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Muhamad Reza Abdul Rohim",
+                    "email": "reza.wikrama3@gmail.com"
+                }
+            ],
+            "description": "Laravel Highcarts Packages",
+            "keywords": [
+                "highcharts",
+                "laravel",
+                "packages"
+            ],
+            "time": "2019-10-01T18:16:15+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -3499,6 +3547,7 @@
                 "mock",
                 "xunit"
             ],
+            "abandoned": true,
             "time": "2018-01-06T05:45:45+00:00"
         },
         {
@@ -4196,7 +4245,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "muhamadrezaar/highcharts": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
