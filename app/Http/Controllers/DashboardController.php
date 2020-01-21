@@ -29,4 +29,12 @@ class DashboardController extends Controller
         return ['ingresos'=>$ingresos,'ventas'=>$ventas,'anio'=>$anio];      
  
     }
+    public function ventas(Request $request){
+        $reporte = DB::select('call reporteVentas()');
+        return $reporte;
+    }
+    public function ingresos(Request $request){
+        $ingreso = DB::select('call reporteIngresos()');
+        return $ingreso;
+    }
 }

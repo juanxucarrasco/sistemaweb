@@ -105,7 +105,6 @@ class IngresoController extends Controller
                 $detalle->precio = $det['precio'];          
                 $detalle->save();
             }          
-
             DB::commit();
         } catch (Exception $e){
             DB::rollBack();

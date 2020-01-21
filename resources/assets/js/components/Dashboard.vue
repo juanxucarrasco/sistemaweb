@@ -70,10 +70,10 @@
         methods : {
             getIngresos(){
                 let me=this;
-                var url= '/dashboard';
+                var url= '/dashboard/ingresos';
                 axios.get(url).then(function (response) {
                     var respuesta= response.data;
-                    me.ingresos = respuesta.ingresos;
+                    me.ingresos = respuesta;
                     //cargamos los datos del chart
                     me.loadIngresos();
                 })
@@ -83,10 +83,11 @@
             },
             getVentas(){
                 let me=this;
-                var url= '/dashboard';
+                var url= '/dashboard/ventas';
                 axios.get(url).then(function (response) {
                     var respuesta= response.data;
-                    me.ventas = respuesta.ventas;
+                    console.log(response.data);
+                    me.ventas = respuesta;
                     //cargamos los datos del chart
                     me.loadVentas();
                 })
@@ -97,8 +98,8 @@
             loadIngresos(){
                 let me=this;
                 me.ingresos.map(function(x){
-                    me.varMesIngreso.push(x.mes);
-                    me.varTotalIngreso.push(x.total);
+                    me.varMesIngreso.push(x.cadenaIn);
+                    me.varTotalIngreso.push(x.sumaIn);
                 });
                 me.varIngreso=document.getElementById('ingresos').getContext('2d');
 
@@ -128,8 +129,8 @@
             loadVentas(){
                 let me=this;
                 me.ventas.map(function(x){
-                    me.varMesVenta.push(x.mes);
-                    me.varTotalVenta.push(x.total);
+                    me.varMesVenta.push(x.cadena);
+                    me.varTotalVenta.push(x.suma);
                 });
                 me.varVenta=document.getElementById('ventas').getContext('2d');
 

@@ -145,7 +145,7 @@
                             </div>
                         </div>
                         <div class="form-group row border">
-                            <div class="col-md-4">
+                            <div class="col-md-5">
                                 <div class="form-group">
                                     <label>Artículo <span style="color:red;" v-show="idarticulo==0">(*Seleccione)</span></label>
                                     <div class="form-inline">
@@ -173,7 +173,7 @@
                                     <input type="number" value="0" class="form-control" v-model="descuento">
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-1">
                                 <div class="form-group">
                                     <button @click="agregarDetalle()" class="btn btn-success form-control btnagregar"><i class="icon-plus"></i></button>
                                 </div>
@@ -232,7 +232,7 @@
                                     <tbody v-else>
                                         <tr>
                                             <td colspan="6">
-                                                NO hay artículos agregados
+                                                No hay artículos agregados
                                             </td>
                                         </tr>
                                     </tbody>                                    

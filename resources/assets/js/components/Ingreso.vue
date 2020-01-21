@@ -100,7 +100,7 @@
                                         placeholder="Buscar Proveedores..."
                                         :onChange="getDatosProveedor"                                
                                     >
-                                        <div slot="no-options">No hay sugerencias</div>
+                                        <span slot="no-options">No hay sugerencias</span>
                                     </v-select>
                                 </div>
                             </div>
@@ -626,7 +626,6 @@
                 }
                 
                 let me = this;
-
                 axios.post('/ingreso/registrar',{
                     'idproveedor': this.idproveedor,
                     'tipo_comprobante': this.tipo_comprobante,

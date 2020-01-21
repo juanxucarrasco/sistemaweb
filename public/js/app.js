@@ -35142,6 +35142,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -38478,7 +38481,23 @@ var render = function() {
                                 },
                                 [_c("i", { staticClass: "icon-check" })]
                               )
-                            ]
+                            ],
+                        _vm._v(
+                          "\n                                 \n                                "
+                        ),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-success btn-sm",
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.NUEVAfUNCION()
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "icon-notebook" })]
+                        )
                       ],
                       2
                     ),
@@ -44116,7 +44135,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
 
             var me = this;
-
             axios.post('/ingreso/registrar', {
                 'idproveedor': this.idproveedor,
                 'tipo_comprobante': this.tipo_comprobante,
@@ -44630,7 +44648,7 @@ var render = function() {
                               },
                               [
                                 _c(
-                                  "div",
+                                  "span",
                                   {
                                     attrs: { slot: "no-options" },
                                     slot: "no-options"
@@ -47391,7 +47409,7 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group row border" }, [
-                      _c("div", { staticClass: "col-md-4" }, [
+                      _c("div", { staticClass: "col-md-5" }, [
                         _c("div", { staticClass: "form-group" }, [
                           _c("label", [
                             _vm._v("Artículo "),
@@ -47608,7 +47626,7 @@ var render = function() {
                         ])
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "col-md-2" }, [
+                      _c("div", { staticClass: "col-md-1" }, [
                         _c("div", { staticClass: "form-group" }, [
                           _c(
                             "button",
@@ -48527,7 +48545,7 @@ var staticRenderFns = [
     return _c("tr", [
       _c("td", { attrs: { colspan: "6" } }, [
         _vm._v(
-          "\n                                        NO hay artículos agregados\n                                    "
+          "\n                                        No hay artículos agregados\n                                    "
         )
       ])
     ])
@@ -48744,10 +48762,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         getIngresos: function getIngresos() {
             var me = this;
-            var url = '/dashboard';
+            var url = '/dashboard/ingresos';
             axios.get(url).then(function (response) {
                 var respuesta = response.data;
-                me.ingresos = respuesta.ingresos;
+                me.ingresos = respuesta;
                 //cargamos los datos del chart
                 me.loadIngresos();
             }).catch(function (error) {
@@ -48756,10 +48774,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         getVentas: function getVentas() {
             var me = this;
-            var url = '/dashboard';
+            var url = '/dashboard/ventas';
             axios.get(url).then(function (response) {
                 var respuesta = response.data;
-                me.ventas = respuesta.ventas;
+                console.log(response.data);
+                me.ventas = respuesta;
                 //cargamos los datos del chart
                 me.loadVentas();
             }).catch(function (error) {
@@ -48769,8 +48788,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         loadIngresos: function loadIngresos() {
             var me = this;
             me.ingresos.map(function (x) {
-                me.varMesIngreso.push(x.mes);
-                me.varTotalIngreso.push(x.total);
+                me.varMesIngreso.push(x.cadenaIn);
+                me.varTotalIngreso.push(x.sumaIn);
             });
             me.varIngreso = document.getElementById('ingresos').getContext('2d');
 
@@ -48800,8 +48819,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         loadVentas: function loadVentas() {
             var me = this;
             me.ventas.map(function (x) {
-                me.varMesVenta.push(x.mes);
-                me.varTotalVenta.push(x.total);
+                me.varMesVenta.push(x.cadena);
+                me.varTotalVenta.push(x.suma);
             });
             me.varVenta = document.getElementById('ventas').getContext('2d');
 

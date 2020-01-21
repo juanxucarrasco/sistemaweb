@@ -58,6 +58,10 @@
                                                 <i class="icon-check"></i>
                                             </button>
                                         </template>
+                                        &nbsp;
+                                        <button type="button" @click="NUEVAfUNCION()" class="btn btn-success btn-sm">
+                                          <i class="icon-notebook"></i>
+                                        </button> 
                                     </td>
                                     <td v-text="articulo.codigo"></td>
                                     <td v-text="articulo.nombre"></td>
@@ -72,7 +76,6 @@
                                         <div v-else>
                                             <span class="badge badge-danger">Desactivado</span>
                                         </div>
-                                        
                                     </td>
                                 </tr>                                
                             </tbody>
